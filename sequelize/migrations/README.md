@@ -17,3 +17,5 @@ sequelize db:migrate:undo
 # or
 sequelize db:migrate:undo:all
 ```
+
+### Delete this file before `sequelize db:migrate`
