@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize'
 import { sequelize } from '@root/database/connection'
 
-import Project from './Project'
+// import Project from './Project'
 
 const Task = sequelize.define('tasks', {
   id: {
@@ -27,6 +27,10 @@ const Task = sequelize.define('tasks', {
   }
 })
 
-Task.belongsTo(Project, { foreingKey: 'projectId', sourceKey: 'id' })
+// Task.belongsTo(Project, {
+//   as: 'Project',
+//   foreingKey: 'projectId',
+//   sourceKey: 'id'
+// })
 
 export default Task

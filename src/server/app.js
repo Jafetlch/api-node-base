@@ -3,8 +3,8 @@ import express, { json } from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
 
-import projectRoutes from '@root/routes/projects'
-import taskRoutes from '@root/routes/tasks'
+import projectRoutes from '@root/routes/projects.route'
+import taskRoutes from '@root/routes/tasks.route'
 
 const app = express()
 // settings

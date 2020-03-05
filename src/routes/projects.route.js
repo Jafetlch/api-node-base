@@ -4,8 +4,9 @@ import {
   getProjects,
   getProjectById,
   deleteProject,
-  updateProject
-} from '@root/controllers/project.controller.js'
+  updateProject,
+  getAllTaskProject
+} from '@root/controllers/project.controller'
 
 const router = Router()
 
@@ -15,5 +16,7 @@ router.get('/:projectId', getProjectById)
 router.delete('/:projectId', deleteProject)
 router.put('/:projectId', updateProject)
 router.put('/:projectId', updateProject)
+
+router.get('/task/all', getAllTaskProject)
 
 export default router

@@ -1,4 +1,5 @@
 import Project from '@root/models/Project'
+import Task from '@root/models/Task'
 import { generateUUID } from '@root/helpers/generateUUID'
 
 export const createProject = async (req, res, next) => {
@@ -67,6 +68,24 @@ export const deleteProject = async (req, res, next) => {
     await project.destroy()
 
     return res.end()
+  } catch (e) {
+    return next(e)
+  }
+}
+
+export const getAllTaskProject = async (req, res, next) => {
+  try {
+    const projects = await Project.findAll({
+      attributes: ['id', 'name', 'description'],
+      include: [
+        {
+          model: Task,
+          as: 'Tasks',
+          attributes: ['id', 'name', 'done']
+        }
+      ]
+    })
+    return res.json(projects)
   } catch (e) {
     return next(e)
   }

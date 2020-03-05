@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize'
 import { sequelize } from '@root/database/connection'
 
-// import Task from './Task'
+import Task from './Task'
 
 const Project = sequelize.define('projects', {
   id: {
@@ -27,6 +27,6 @@ const Project = sequelize.define('projects', {
   }
 })
 
-// Project.hasMany(Task, { foreingKey: 'projectId', sourceKey: 'id' })
+Project.hasMany(Task, { as: 'Tasks', foreingKey: 'projectId', sourceKey: 'id' })
 
 export default Project
